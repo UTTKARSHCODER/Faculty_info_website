@@ -1,7 +1,3 @@
-.top-text{
-    font-size: 16px;
-}
-
 .f-7{
     margin: 7px;
 }
@@ -10,11 +6,15 @@
     height: 50px;
 }
 
+.f-11{
+    font-size: 11px;
+}
+
 .h-60{
     height: 60px
 }
 .bg-gray{
-    background-color: lightgray;
+   background: linear-gradient(to right, #1d4350, #a43931);
 }
 
 .logo-border{
@@ -41,4 +41,59 @@
 .btn.bg-brown.custom-hover:hover{
     background-color: lightgray;
     color: black !important
+}
+
+.f-20{
+    font-size: 20px;
+}
+
+.row.form-styling{
+    height: 1000px;
+    width: 700px;
+    margin-left: 400px;
+    border: 2px solid #520608;
+    border-radius: 30px;
+    box-shadow: 10px 5px 5px 5px lightgray;
+    background: linear-gradient(to right, #2196f3, #f44336) !important;
+}
+
+.custom-css {
+    position: absolute;
+    margin-top: 150px;
+    margin-bottom: 100px;
+    margin-left: 425px;
+    height: 500px;
+    width: 700px;
+    background-color: #D4EDDA;
+    border-radius: 20px;
+    box-shadow: 10px 5px 5px 5px lightgray;
+}
+
+.edit{
+    margin-top: 50px;
+}
+
+.adjust {
+    height: 100px;
+    width: 100px;
+    margin-left: 285px;
+    margin-top: 175px;
+}
+
+.custom-color{
+    color: green;
+}
+
+/* Try to make this background hold when user selects entities from google's dropdown suggestion */
+.custom-back{ 
+    background: linear-gradient(to right, #2196f3, #f44336) !important;
+}
+
+.h-1000{
+    height: 1015px;
+}
+
+.custom-font{
+    font-style: italic;
+    font-size: 16px;
 }
