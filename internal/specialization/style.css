@@ -1,0 +1,26 @@
+
+h1{
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    font-family: "Playwrite AU QLD", cursive;
+    font-weight: 800;
+}
+body{
+    background-color: rgb(83, 83, 174);
+
+}
+hr{
+    margin-top: 20px;
+}
+.card{
+    width:40%;
+}
+
+h5,h4{
+    font-family: "Playwrite AU QLD", cursive;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
