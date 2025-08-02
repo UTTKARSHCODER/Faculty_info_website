@@ -1,5 +1,6 @@
 <?php
-    header('Content-Type: text/html'); 
+    header('Content-Type: text/html');
+    include('/project/root/config/config.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,14 +27,6 @@
                 exit;
             }
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                //Database connection establishing
-                $servername = "localhost";
-                $username = "root";
-                $password = "";
-                $database = "faculty_info";
-
-                //Create a connection
-                $conn = mysqli_connect($servername, $username, $password, $database);
                 
                 if (isset($_POST['form_type'])) {
                     $formType = $_POST['form_type'];
@@ -63,8 +56,6 @@
                         $dor = $_POST['dor'];
                         $nrpp = $_POST['nrpp'];
                     
-                        
-
                         //Die if connection is not successful
                         if(!$conn) {
                             die("We are unable to connect to the server. Sorry for the inconvinence and thanks for the co-operation!");
@@ -76,7 +67,7 @@
                             
                             if($result) {
                                 $encoded_row_id = urlencode($row_id);
-                                $redirectURL = "/project/root/sign_in_form2.html?id=". $encoded_row_id;
+                                $redirectURL = "/project/root/sign_in_form2.php?id=". $encoded_row_id;
                                 header('Location: ' . $redirectURL);
                             }
                             else {

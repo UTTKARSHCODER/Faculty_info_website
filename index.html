@@ -16,6 +16,7 @@
     <script src="https://kit.fontawesome.com/217508c9b2.js" crossorigin="anonymous"></script>
     <script src='main.js'></script>
     <link rel='stylesheet' type='text/css' media='screen' href='assets/css/style.css'>
+    <script src = "assets/javascript/sendLoginDetails.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             var dropdowns = document.querySelectorAll('.dropdown');
@@ -142,13 +143,13 @@
                         <div class = "d-grid">
                             <div class = "mb-3">
                                 <label for = "email" class = "form-label">Email:- </label>
-                                <input type = "email" class = "form-control" id = "email" placeholder = "Enter email provided by the institution" name = "email">
+                                <input type = "email" class = "form-control" id = "signemail" placeholder = "Enter email provided by the institution" name = "email">
                             </div>
                             <div class = "mb-3">
                                 <label for = "pwd" class = "form-label">Password:- </label>
-                                <input type = "password" class = "form-control" id = "pwd" placeholder = "Enter password">
+                                <input type = "password" class = "form-control" id = "signpwd" placeholder = "Enter password">
                             </div>
-                            <a type = "submit" class = "btn btn-primary btn-block mt-3" href = 'sign_in_form.html'>Sign Up</a>
+                            <a type = "submit" class = "btn btn-primary btn-block mt-3" href = 'sign_in_form.php'>Sign Up</a>
                         </div>
                     </form>
                 </div>
@@ -176,15 +177,15 @@
 
                 <!-- Modal body -->
                 <div class = "modal-body">
-                    <form>
+                    <form action = "assets/php/login.php" method="post">
                         <div class = "d-grid">
                             <div class = "mb-3">
-                                <label for = "email" class = "form-label">Email:- </label>
-                                <input type = "email" class = "form-control" id = "email" placeholder = "Enter institutional email" name = "email">
+                                <label for = "LoginEmail" class = "form-label">Email:- </label>
+                                <input type = "email" class = "form-control" id = "logemail" placeholder = "Enter institutional email" name = "email" required>
                             </div>
                             <div class = "mb-3">
                                 <label for = "pwd" class = "form-label">Password:- </label>
-                                <input type = "password" class = "form-control" id = "pwd" placeholder = "Enter password ">
+                                <input type = "password" class = "form-control" id = "logpwd" placeholder = "Enter password" name = "pwd" required>
                             </div>
                             <label>Didn't have an account.<a class = "btn btn-link mb-1" data-bs-toggle = "modal" data-bs-target = "#signupmodal">Sign Up</a>now!</label>
                             <button type = "submit" class = "btn btn-primary btn-block mt-3">Log In</button>

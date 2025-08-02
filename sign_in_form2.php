@@ -1,53 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Sign In</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel = "icon" type = "image/png" sizes = "32x32" href = "assets/image/top-head-logo.png">
-        <!-- Latest compiled and minified CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Latest compiled JavaScript --> 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://kit.fontawesome.com/217508c9b2.js" crossorigin="anonymous"></script>
-    <script src='main.js'></script>
-    <link rel='stylesheet' type='text/css' media='screen' href='assets/css/style.css'>
-    <script src = "assets/javascript/toggleCheckbox.js"></script>
-    <script>
-        var urlParams = new URLSearchParams(window.location.search);
-        var itemId = urlParams.get('id');
-    </script>
-</head>
-<!-- Load Logo -->
-<body>
-    <div class = "container-fluid bg-gray" style = "height: 100px;">
-        <nav class = "navbar navbar-expand-md navbar-dark justify-content-end">
-            <ul class = "navbar-nav mt-2 d-flex column-gap-4 me-5">
-                <li class = "nav-item bg-dark rounded-3">
-                    <a class = "nav-link text-light" href = "index.html" >Home</a>
-                </li>
-                <li class = "nav-item bg-dark dropdown rounded-3">
-                    <a class = "nav-link text-light dropdown-toggle" href = "#" role = "button" data-bs-toggle = "dropdown">User</a>
-                    <ul class = "dropdown-menu">
-                        <li><a class = "dropdown-item" href = "#">Student</a></li>
-                        <li><a class = "dropdown-item" href = "#">Staff</a></li>
-                        <li><a class = "dropdown-item" href = "#">Admin</a></li>
-                        <li><a class = "dropdown-item" href = "#">Admission Cell</a></li>
-                    </ul>
-                </li>
-                <li class = "nav-item bg-dark rounded-3">
-                    <a class = "nav-link text-light" href = "#" >Contact Us</a>
-                </li>
-                <li class = "nav-item bg-dark rounded-3">
-                    <a class = "nav-link text-light" href = "#" >Blog</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+<?php 
+    include('include/header.php');
+?>
     <!-- User Details -->
-    <div class = "container-fluid h-100 bg-gray">
+    <link rel='stylesheet' type='text/css' media='screen' href='assets/css/style.css'>
+    <div class = "container-fluid h-100">
         <div class = "row form-styling">
             <div class = "col-sm-12 col-md-12 col-lg-12 col-12 f-20 me-5 mt-4">
                 <h2 class = "text-center custom-color">Sign up</h2>

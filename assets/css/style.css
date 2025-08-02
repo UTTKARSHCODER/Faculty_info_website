@@ -49,8 +49,7 @@
 
 .row.form-styling{
     height: 90%;
-    width: 700px;
-    margin-left: 400px;
+    width: 100%;
     border: 2px solid #520608;
     border-radius: 30px;
     box-shadow: 10px 5px 5px 5px lightgray;
