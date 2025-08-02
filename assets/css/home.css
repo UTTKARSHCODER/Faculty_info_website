@@ -103,10 +103,19 @@ color: #FFFFFF;
     padding: 1.5rem 0;
     flex-shrink: 0;
     display: flex;
+<<<<<<< HEAD:assets/css/home.css
     align-content: space-between;
 }
 .navbar-nav{
     list-style: none;
+=======
+    /* text-align: start; */
+  align-content: space-between;
+    
+}
+.navbar-nav{
+    list-style: none;  
+>>>>>>> 94e73d59c187893f71c13ab97e119d9ad7fc8456:assets/css/faculty.css
     padding: 0;
     margin: 0;
 }
