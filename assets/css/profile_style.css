@@ -73,8 +73,7 @@ background: radial-gradient(circle, rgba(251, 116, 63, 1) 0%, rgba(252, 70, 70, 
 }
 
 .content-box{
-    display: flex;
-    flex-direction: row;    
+    height: 1025px  
 }
 .nav-item{
     list-style: none;
@@ -101,7 +100,7 @@ background: radial-gradient(circle, rgba(251, 116, 63, 1) 0%, rgba(252, 70, 70, 
     width: 250px;
     padding: 1.5rem 0;
     flex-shrink: 0;
-    height: 975px;
+    height: 420px;
 }
 .navbar-nav{
     list-style: none;
@@ -113,12 +112,13 @@ background: radial-gradient(circle, rgba(251, 116, 63, 1) 0%, rgba(252, 70, 70, 
 .alignment{
     margin-left: 259px;
     width: 83%;
-    height: 125%;
+    height: 100%;
     position: absolute;
     border: 0px solid red;
 }
 
 .color-gray{
+    margin-bottom: -30px;
     color: #89817e;
 }
 

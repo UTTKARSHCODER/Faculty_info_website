@@ -1,7 +1,8 @@
 <?php
+session_start();
 include('C:/xampp/htdocs/project/root/config/config.php');
 
-if(!$con){
+if(!$conn){
     die("ERROR: something is lost");
 }
 
@@ -20,20 +21,29 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["upFile"])){
     }
 
     $final_File = $finalDir_File.basename($fileRealName);
-
-    if(move_uploaded_file($fileTemp_storage,$final_File)){
-        $sql = "INSERT INTO `trip table1`(file_name,file_path) VALUES (?,?)";
-        $stmt = $con->prepare($sql);
-        $stmt->bind_param("ss",$filename,$final_File);
-        
-        if($stmt->execute()){
-            echo "<div id='upload-success' data-file-path='{$final_File}' data-file-name='{$filename}'></div>";
-        echo "Certificate uploaded and saved successfully.";
-        }else{
-        echo "ERROR: while saving the file.".$stmt->error;
+    if(isset($_SESSION['userEmail'])) {
+    $email = $_SESSION['userEmail'];
+        if(move_uploaded_file($fileTemp_storage,$final_File)){
+            $sql = "UPDATE `detailed_faculty_info` SET `certificate_file_name` = '$filename', `certificate_file_path` = '$final_File' WHERE `detailed_faculty_info`.`email` = $email";
+            $result = mysqli_query($conn,$sql);
+            if ($result) {
+                echo "<div id='upload-success' data-file-path='{$final_File}' data-file-name='{$filename}'></div>";
+                echo "Certificate uploaded and saved successfully.";
+            } else{
+            echo "ERROR: while saving the file.".$conn->error;
+            }
+            // $stmt = $conn->prepare($sql);
+            // $stmt->bind_param("ss",$filename,$final_File);
+            
+            // if($stmt->execute()){
+            //     echo "<div id='upload-success' data-file-path='{$final_File}' data-file-name='{$filename}'></div>";
+            // echo "Certificate uploaded and saved successfully.";
+            // }else{
+            // echo "ERROR: while saving the file.".$stmt->error;
+            // }
+            
+            $conn->close();
         }
-        
-        $stmt->close();
     }
     else{
         echo "File upload failed.";
@@ -41,6 +51,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["upFile"])){
 
 
 }
-$con->close();
 
 ?>

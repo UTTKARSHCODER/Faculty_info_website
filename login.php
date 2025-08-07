@@ -18,7 +18,7 @@
     </style>
     
     <div class = "google-login-button">
-        <h2>Welcome Faculty! Please Login.</h2>
+        <h2>Welcome User! Please Login.</h2>
         <div id="g_id_onload"
             data-client_id="452004658-r8pun8uqok65stmllmqmrhcaaenh2bt3.apps.googleusercontent.com" data-callback="handleCredentialResponse"
             data-cancel_on_tap_outside="false"
@@ -50,7 +50,7 @@
             .then(res => res.json())
             .then(data => {
                 if(data.success) {
-                    window.location.href = 'sign_in_form.php';
+                    window.location.href = 'profile.php';
                 } else {
                     alert(data.message);
                 }

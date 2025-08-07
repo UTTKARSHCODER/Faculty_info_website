@@ -14,6 +14,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/217508c9b2.js" crossorigin="anonymous"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -44,7 +45,7 @@
                 <li><span style = "display: flex;"><i class = "fa-solid fa-user" style = "margin-top: 7px; margin-left: 5px;"></i><a class="dropdown-item" href="/project/root/login.php?post=faculty">Faculty</a></span></li>
               </ul><?php 
               } else if(isset($_SESSION['last_user'])){ ?>
-                <i class = "fa-regular fa-user"></i>
+                <i class = "fa-regular fa-user text-white"></i>
                 <button type="button" class="text-white dropdown-toggle" data-bs-toggle="dropdown" style = "background: #2F3E46">
                 <?php if($_SESSION['last_user'] === "admin") { echo "Admin";} else if($_SESSION['last_user'] === "faculty") { echo "Faculty"; } ?>
               </button>

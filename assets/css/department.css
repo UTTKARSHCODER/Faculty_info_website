@@ -13,7 +13,7 @@
     /* margin-top: 2rem; */
     /* border: 1px solid black; */
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(5,1fr);
  /* line-height: 1rem; */
  
  
@@ -33,7 +33,7 @@
 img{
     width: 5rem;
     height: 5rem;
-     transition: transform .3s ease;
+    transition: transform .3s ease;
 }
 img:hover{
     transform: scale(1.5);

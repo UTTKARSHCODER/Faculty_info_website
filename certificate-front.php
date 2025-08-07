@@ -11,7 +11,8 @@
               <a href="assets/php/profile_page.php" style = "text-decoration: none;"><li class="nav-item text-white">Profile</li></a>
               <?php if (isset($_SESSION['last_user'])) {
                 if ($_SESSION['last_user'] === 'admin') { ?>
-              <a href="assets/php/qualification.php" style = "text-decoration: none;"><li class="nav-item text-white">Qualfication</li></a>
+                <a href="email_access.php" style = "text-decoration: none;"><li class = "nav-item text-white">Faculty Emails</li></a>
+              <a href="assets/php/faculty_report.php" style = "text-decoration: none;"><li class="nav-item text-white">Qualfication</li></a>
               <li class="nav-item"><a href="#"> Specialization</a></li> <?php
                 }
                 }
@@ -51,7 +52,7 @@
         </div>
 
         <!-- modal start -->
-        <form action="redirect.html" method="POST" enctype="multipart/form-data">
+        <form action="assets/php/certificate.php" method="POST" enctype="multipart/form-data">
             <div class="modal fade" id="upload_file" tabindex="-1">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -66,7 +67,7 @@
                             <input type="text" id="name" class="m-3 h-70" name="file_name"
                                 placeholder=" Enter the title here">
                             <input type="file" name="upFile" class="m-3">
-                            <button type="submit">Upload File</button>
+                            <a href = ""><button type="submit">Upload File</button></a>
                         </div>
                         <!-- modal footer -->
                         <div class="modal-footer">

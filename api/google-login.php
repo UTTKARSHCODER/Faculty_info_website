@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+include('C:/xampp/htdocs/project/root/config/config.php');
 
 
 require_once __DIR__ . '/../../vendor/autoload.php';
@@ -9,12 +10,17 @@ const GOOGLE_CLIENT_ID = "452004658-r8pun8uqok65stmllmqmrhcaaenh2bt3.apps.google
 if (isset($_SESSION['last_user'])) {
     if ($_SESSION['last_user'] === 'admin') {
         $allowedEmails= [
-            'goat80078@gmail.com'
-        ];
-    } else if ($_SESSION['last_user'] === 'faculty') {
-        $allowedEmails = [
             'b240259@skit.ac.in'
         ];
+    } else if ($_SESSION['last_user'] === 'faculty') {
+        $allowedEmails = [];
+        $sql = "SELECT username FROM `user_details`";
+        $result = mysqli_query($conn,$sql);
+        if (mysqli_num_rows($result) > 0) {
+            while($row = mysqli_fetch_assoc($result)) {
+                $allowedEmails[] = $row['username'];
+            }
+        }
     }
 }
 
