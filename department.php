@@ -6,7 +6,7 @@
           <!-- left nav sec  -->
           <nav class="navbar">
             <ul class="navbar-nav text-dark">
-              <a href="home.php" style = "text-decoration: none;"><li class="nav-item active text-white">Home</li></a>
+              <a href="index.php" style = "text-decoration: none;"><li class="nav-item active text-white">Home</li></a>
               <a href="profile.php" style = "text-decoration: none;"><li class="nav-item text-white">Profile</li></a>
               
               <?php if (isset($_SESSION['last_user'])) {
@@ -41,7 +41,7 @@
             $result = mysqli_query($conn,$sql);
             if (mysqli_num_rows($result) > 0) {
               while ($row = mysqli_fetch_assoc($result)) { ?>
-                <div class="profile-card" style = "width: 205px; height: 370px; box-shadow: 5px 5px 5px 1px lightgray;">
+                <div class="profile-card" style = "width: auto; height: auto; box-shadow: 5px 5px 5px 1px lightgray;">
                   <img src='<?php echo $row['profile_path']; ?>' alt="faculty-photo" style = "width:150px; height:150px;">
                   <h4><?php echo $row['name']; ?></h4>
                   <h5><?php echo $row['designation']; ?></h5>
@@ -60,7 +60,7 @@
             $result = mysqli_query($conn,$sql);
             if (mysqli_num_rows($result) > 0) {
               while ($row = mysqli_fetch_assoc($result)) { ?>
-                <div class="profile-card" style = "width: 205px; height: 370px; box-shadow: 5px 5px 5px 1px lightgray;">
+                <div class="profile-card" style = "width: auto; height: auto; box-shadow: 5px 5px 5px 1px lightgray;">
                   <img src='<?php echo $row['profile_path']; ?>' alt="faculty-photo" style = "width:150px; height:150px;">
                   <h4><?php echo $row['name']; ?></h4>
                   <h5><?php echo $row['designation']; ?></h5>
@@ -79,7 +79,7 @@
             $result = mysqli_query($conn,$sql);
             if (mysqli_num_rows($result) > 0) {
               while ($row = mysqli_fetch_assoc($result)) { ?>
-                <div class="profile-card" style = "width: 205px; height: 370px; box-shadow: 5px 5px 5px 1px lightgray;">
+                <div class="profile-card" style = "width: auto; height: auto; box-shadow: 5px 5px 5px 1px lightgray;">
                   <img src='<?php echo $row['profile_path']; ?>' alt="faculty-photo" style = "width:150px; height:150px;">
                   <h4><?php echo $row['name']; ?></h4>
                   <h5><?php echo $row['designation']; ?></h5>
@@ -98,7 +98,7 @@
             $result = mysqli_query($conn,$sql);
             if (mysqli_num_rows($result) > 0) {
               while ($row = mysqli_fetch_assoc($result)) { ?>
-                <div class="profile-card" style = "width: 205px; height: 370px; box-shadow: 5px 5px 5px 1px lightgray;">
+                <div class="profile-card" style = "width: auto; height: auto; box-shadow: 5px 5px 5px 1px lightgray;">
                   <img src='<?php echo $row['profile_path']; ?>' alt="faculty-photo" style = "width:150px; height:150px;">
                   <h4><?php echo $row['name']; ?></h4>
                   <h5><?php echo $row['designation']; ?></h5>

@@ -47,7 +47,7 @@
               } else if(isset($_SESSION['last_user'])){ ?>
                 <i class = "fa-regular fa-user text-white"></i>
                 <button type="button" class="text-white dropdown-toggle" data-bs-toggle="dropdown" style = "background: #2F3E46">
-                <?php if($_SESSION['last_user'] === "admin") { echo "Admin";} else if($_SESSION['last_user'] === "faculty") { echo "Faculty"; } ?>
+                <?php if($_SESSION['last_user'] === "admin") { echo "Admin";} else if($_SESSION['last_user'] === "faculty") { echo "Faculty"; } else {unset($_SESSION['last_user']);}?>
               </button>
               <ul class="dropdown-menu">
                 <li><span style = "display: flex;"><i class = "fa-solid fa-right-from-bracket" style = "margin-top: 7px; margin-left: 5px;"></i><a class="dropdown-item" href="/project/root/assets/php/logout.php">Logout</a></span></li>

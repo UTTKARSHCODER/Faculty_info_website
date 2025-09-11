@@ -82,12 +82,12 @@ background: radial-gradient(circle, rgba(251, 116, 63, 1) 0%, rgba(252, 70, 70, 
     margin-left: 2.5rem;
     font-size: 1.4rem;
     margin: .9rem .3rem;
-    padding: .6rem 1.6rem;
+    padding: 0.6rem 0.6rem;
     white-space: nowrap;
 }
 .nav-item a{
     text-decoration: none;
-color: #FFFFFF;
+    color: #FFFFFF;
     
 }
 .nav-item.active{
@@ -98,8 +98,9 @@ color: #FFFFFF;
 .navbar{
     /* margin-top: rem; */
     background: #2F3E46;
-    height: 420px;
-    width: 250px;
+    height: 330px;
+    border-radius: 3px;
+    width: 170px;
     padding: 1.5rem 0;
     flex-shrink: 0;
     display: flex;
@@ -239,7 +240,7 @@ color: #FFFFFF;
 /* align-items: center; */
 /* justify-content: space-between; */
     display: grid;
-    grid-template-columns: 2.3fr 1.5fr 1.5fr 1.5fr;
+    grid-template-columns: 2.3fr 2.0fr 1.5fr 1.5fr;
     /* justify-content: space-between; */
       /* new1 */
       padding: 1.2rem;
@@ -251,7 +252,7 @@ color: #FFFFFF;
     /* justify-content: center; */
     padding: 1.5rem 1rem;   
     color: white;
-   gap: 1.5rem;
+    gap: 10px;
 }
 .box p{
     font-size: 1.1rem;

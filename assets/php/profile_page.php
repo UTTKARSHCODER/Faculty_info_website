@@ -8,7 +8,7 @@
           <!-- left nav sec  -->
           <nav class="navbar">
             <ul class="navbar-nav text-dark">
-              <a href="/project/root/home.php" style = "text-decoration: none;"><li class="nav-item  text-white">Home</li></a>
+              <a href="/project/root/index.php" style = "text-decoration: none;"><li class="nav-item  text-white">Home</li></a>
               <a href="/project/root/profile.php" style = "text-decoration: none;"><li class="nav-item active text-white">Profile</li></a>
               <?php if (isset($_SESSION['last_user'])) {
                 if ($_SESSION['last_user'] === 'admin') { ?>
@@ -38,15 +38,20 @@
                 <div class =" col-12 mb-2 ms-auto mt-2">
                     <a href = "/project/root/sign_in_form.php?job=edit"><i class = "fa-solid fa-pen"><h5>Edit</h5></i></a>
                 </div>
-                <div class = "col-12"> <?php
+                <div class = "col-12">
+                    <div style = "float: left; width:200px; height: 100px;">
+                        <img src = "/project/root/assets/uploads/profile_picture/688f6a096400b_profile-picture-men.png" alt = "Profile Image">
+                    </div>
+                    <?php
                     if (mysqli_num_rows($result) > 0) {
                         $row = mysqli_fetch_assoc($result);
                         ?> 
-                        <h1 class = "text-center mt-3"><?php echo $row['name'];?></h1>
+                        <h1 class = "text-center  mt-3"><?php echo $row['name']; ?></h1>
                         <h2 class = "text-center mt-3">Department: <?php echo $row['department'];?></h2>
-                        <h3 class = "text-center mt-3">Designation: <?php echo $row['designation'];?></h3>
-                        <hr/>
+                        <h3 class = "text-center mt-3" style = "margin-left: 180px;">Designation: <?php echo $row['designation'];?></h3>
+                        
                 </div>
+                <hr/>
                 <div class = "row">
                     <div class = "col mt-3 ms-3 color-gray">
                         <h3 class = "mt-3">Personal Details:</h3>
@@ -159,10 +164,6 @@
                             </div>
                         </div>
                     </div>
-                    <h4 class = "mt-3 left-margin-h4">Salary Slip<span>
-                        <button type = "button" class = "btn btn-primary right-margin" data-bs-toggle = "modal" data-bs-target = "#salaryModal"><i class = "fa-solid fa-eye"></i> Click Here</button>
-                        </span>
-                    </h4>
                     <!-- The Modal -->
                     <div class="modal" id="salaryModal">
                         <div class="modal-dialog">

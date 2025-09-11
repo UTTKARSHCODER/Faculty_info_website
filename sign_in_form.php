@@ -6,7 +6,7 @@ include('config/config.php');
           <!-- left nav sec  -->
           <nav class="navbar">
             <ul class="navbar-nav text-dark">
-              <a href="home.php" style = "text-decoration: none;"><li class="nav-item active text-white">Home</li></a>
+              <a href="index.php" style = "text-decoration: none;"><li class="nav-item active text-white">Home</li></a>
               <a href="profile.php" style = "text-decoration: none;"><li class="nav-item text-white">Profile</li></a>
               <?php if (isset($_SESSION['last_user'])) {
                 if ($_SESSION['last_user'] === 'admin') { ?>

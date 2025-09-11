@@ -7,7 +7,7 @@
     <div class = "content-box">
     <nav class="navbar">
         <ul class="navbar-nav text-dark ">
-        <a href="/project/root/home.php" style = "text-decoration: none;"><li class="nav-item text-white">Home</li></a>
+        <a href="/project/root/index.php" style = "text-decoration: none;"><li class="nav-item text-white">Home</li></a>
         <a href="/project/root/profile.php" style = "text-decoration: none;"><li class="nav-item text-white">Profile</li></a>
         <a href="/project/root/email_access.php" style = "text-decoration: none;"><li class = "nav-item text-white">Faculty Emails</li></a>
         <a href="faculty_report.php" style = "text-decoration: none;"><li class="nav-item active">Faculty Report</li></a>
@@ -19,96 +19,50 @@
         <a href="/project/root/report.html" style = "text-decoration: none;"><li class="nav-item text-white">Report</li></a> -->
         </ul>
     </nav>
+    <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css">
+    <link rel = "stylesheet" href = "https://cdn.datatables.net/2.3.2/css/dataTables.bootstrap5.css">
     <div class = "container-fluid h-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <form action="" method="GET">
-                        <div class="input-group mt-5">
-                            <!-- <label for="go">search bar </label> -->
-                            <input type="text" id="go" placeholder="click here to search" name="search" class="form-control"
-                                value="<?php    
-                                    if(isset($_GET['search'])){
-                                        echo $_GET['search'];
-                                    }
-                                ?>">
-                            <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
-                        </div>
-                    </form>
-                </div>
-                <div class="mt-5">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Email-Id</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                                $con = mysqli_connect("localhost","root","","faculty_info");
-                                if(isset($_GET['search'])){
-                                    $searched_val = $_GET['search'];
-                                    $query = "SELECT * FROM `detailed_faculty_info` WHERE CONCAT(Name) LIKE '%$searched_val%'";
-                                    $query_run = mysqli_query($con,$query);
-
-                                    if(mysqli_num_rows($query_run)>0){
-                                        
-                                        foreach($query_run as $items){
-                                            ?>
-
-                            <tr>
-                                <td><?=$items['name']; ?></td>
-
-                                <td><?= $items['email'] ?></td>
-
-                            </tr>
-                            <?php
-                                        }
-                                    }
-                                else{
-                                    ?>
-                            <tr>
-                                <td colspan="2">No record found</td>
-                            </tr>
-                            <?php
-                                }
-                            }
-                        ?>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
+        <script src = "https://code.jquery.com/jquery-3.7.1.js"></script>
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+        <script src = "https://cdn.datatables.net/2.3.2/js/dataTables.js"></script>
+        <script src = "https://cdn.datatables.net/2.3.2/js/dataTables.bootstrap5.js"></script>
         <?php 
             $sql = "SELECT `name`,`highest_qualification`,`department`,`designation` FROM `detailed_faculty_info`";
             $result = mysqli_query($conn,$sql);
             if ($result) { $i = 1;
-        ?>
-                <table class="table table-striped mt-3">
-                    <thead class="table-dark">
-                        <tr>
-                            <th>S.No</th>
-                            <th>Name</th>
-                            <th>Designation</th>
-                            <th>Department</th>
-                            <th>Highest Qualfication</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php while($row = mysqli_fetch_assoc($result)) {  ?>
+        ?>      <div class = "table-responsive">
+                    <table class="table table-striped mt-3" id = "scroll-table">
+                        <thead class="table-dark">
                             <tr>
-                                <td><?php echo $i?></td>
-                                <td><?php echo $row['name']?></td>
-                                <td><?php echo $row['designation']?></td>
-                                <td><?php echo $row['department']?></td>
-                                <td><?php echo $row['highest_qualification']?></td>
+                                <th>S.No</th>
+                                <th>Name</th>
+                                <th>Designation</th>
+                                <th>Department</th>
+                                <th>Highest Qualfication</th>
                             </tr>
-                        <?php $i++;
-                        }
-                        ?>
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            <?php while($row = mysqli_fetch_assoc($result)) {  ?>
+                                <tr>
+                                    <td><?php echo $i?></td>
+                                    <td><?php echo $row['name']?></td>
+                                    <td><?php echo $row['designation']?></td>
+                                    <td><?php echo $row['department']?></td>
+                                    <td><?php echo $row['highest_qualification']?></td>
+                                </tr>
+                            <?php $i++;
+                            }
+                            ?>
+                        </tbody>
+                    </table>
+                    <script>
+                        new DataTable("#scroll-table",{
+                            paging: false,
+                            scrollCollapse: true,
+                            scrollY: '200px'
+                        });
+                    </script>
+                </div>
         <?php 
             } else {
                 echo "Query not executed" . $conn->error;
@@ -131,7 +85,6 @@
     </div>
     </div>
     </div>
-    
 <?php 
     include('C:/xampp/htdocs/project/root/include/footer.html');
 ?>

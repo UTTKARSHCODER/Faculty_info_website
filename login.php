@@ -39,7 +39,8 @@
             const idToken = response.credential;
             <?php if(isset($_GET['post'])) {
                         session_start();
-                    $_SESSION['last_user'] = htmlspecialchars($_GET['post']); } ?>
+                    $_SESSION['last_user'] = htmlspecialchars($_GET['post']);
+                     } ?>
             fetch('api/google-login.php', {
                 method: 'POST',
                 headers: {
@@ -57,7 +58,7 @@
             })
             .catch(error => {
                 console.error('Error:', error);
-                alert('An error occured.')
+                alert('An error occured.');
             })
         }
     </script>

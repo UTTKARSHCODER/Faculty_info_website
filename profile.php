@@ -8,12 +8,12 @@
           <!-- left nav sec  -->
           <nav class="navbar">
             <ul class="navbar-nav text-dark">
-              <a href="/project/root/home.php" style = "text-decoration: none;"><li class="nav-item  text-white">Home</li></a>
+              <a href="index.php" style = "text-decoration: none;"><li class="nav-item  text-white">Home</li></a>
               <a href="profile.php" style = "text-decoration: none;"><li class="nav-item active text-white">Profile</li></a>
               <?php if (isset($_SESSION['last_user'])) {
                 if ($_SESSION['last_user'] === 'admin') { ?>
-                <a href="/project/root/email_access.php" style = "text-decoration: none;"><li class = "nav-item text-white">Faculty Emails</li></a>
-                <a href="faculty_report.php" style = "text-decoration: none;"><li class="nav-item text-white">Faculty Report</li></a>
+                <a href="email_access.php" style = "text-decoration: none;"><li class = "nav-item text-white">Faculty Emails</li></a>
+                <a href="assets/php/faculty_report.php" style = "text-decoration: none;"><li class="nav-item text-white">Faculty Report</li></a>
               <!-- <a href="assets/php/faculty_report.php" style = "text-decoration: none;"><li class="nav-item text-white">Qualfication</li></a>
               <li class="nav-item"><a href="#"> Specialization</a></li> --> <?php
                 } 
@@ -44,7 +44,7 @@
                 <div class="container">
                     <a href = "assets/php/profile_page.php" style = "text-decoration: none"><div class="card">
                         <div class="image-card">
-                            <img src=<?= $row['profile_path'];?> alt=" profile-pic">
+                            <img src=<?= $row['profile_path'];?> alt="profile-pic">
                             <h2 class = "mt-3"><?= $row['name'] ?></h2>
                         </div>
                         <div class="card-menu">
@@ -76,7 +76,9 @@
                     echo "No data found";
                 }
             } else { ?>
-                <a href = "logout.php" class = "text-center edit">You are not authorized. Log in through Top Right dropdown.</a>
+                <div class = "container h-25 bg-white text-center" style = "margin-top: 200px;">
+                    <a href = "logout.php" class = "text-center">You are not authorized. Log in through Top Right dropdown.</a>
+                </div>
                 <?php
             }
             ?>

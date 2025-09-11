@@ -1,0 +1,105 @@
+h1{
+    font-weight:650;
+    
+}
+.about{
+    margin: 30px;
+}
+.mission{
+    margin-left: 30px;
+    margin-top: 10px;
+}
+.us{
+    text-decoration: underline;
+}
+h5{
+    font-weight: 100;
+}
+.top{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-family: "Playfair Display", serif;
+    color: #2703ff;
+}
+.heading{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-family: "Playfair Display", serif;
+    color: #2703ff;
+}
+.lin{
+    /* margin-top: 25px; */
+    height: 25px;
+    width: 98px;
+    background-color: rgb(84, 110, 51);
+}
+.climg{
+    height: 158px;
+    width: 159px;
+    border-radius: 50%;
+    margin-top: 0px;
+}
+.uttimg{
+    height: 146px;
+    width: 141px;
+    border-radius: 50%;
+    margin-top: -5px;
+}
+.yogimg{
+    height: 157px;
+    width: 164px;
+    border-radius: 50%;
+    margin-top: -10px;
+}
+.yuvimg{
+    height: 157px;
+    width: 164px;
+    border-radius: 50%;
+    margin-top: -10px;
+}
+.tarunimg{
+    height: 157px;
+    width: 164px;
+    border-radius: 50%;
+    margin-top: -10px;
+}.row{
+    border: 3px black;
+}
+.card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 265px;
+    width: 535px;
+    margin-left: 20px;
+    background-color: rgba(97 119 72 / 96%);
+    border: 3px solid rgb(171, 176, 100);
+    transition: .4s;
+    border-radius: 20px;
+}
+.client{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 265px;
+    width: 535px;
+    margin-left: 291px;
+    background-color: rgba(97 119 72 / 96%);
+    border: 3px solid rgb(171, 176, 100);
+    transition: .4s;
+    border-radius: 20px;
+}
+b{
+    background-color: rgba(97 119 72 / 96%);
+    color: yellow;
+
+}
+.card:hover{
+    border-radius: 45px;
+    box-shadow: 14px 15px 19px black;
+}
+lin:hover{
+    border-radius: 20px;
+}
