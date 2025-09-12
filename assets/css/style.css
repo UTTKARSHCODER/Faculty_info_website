@@ -1,0 +1,118 @@
+.f-7{
+    margin: 7px;
+}
+
+.h-50{
+    height: 50px;
+}
+
+.f-11{
+    font-size: 11px;
+}
+
+.h-60{
+    height: 60px
+}
+.bg-gray{
+   background: linear-gradient(to right, #1d4350, #a43931);
+}
+
+.logo-border{
+    margin-top: 10px;
+    height: 70px;
+    width: 100px;
+    border: 0px solid red;
+    float: left;
+}
+
+.h-600{
+    height: 600px;
+}
+ 
+.bg-brown{
+    background-color: #520608;
+}
+
+.custom{
+    position: absolute;
+    float: right;
+}
+
+.btn.bg-brown.custom-hover:hover{
+    background-color: lightgray;
+    color: black !important
+}
+
+.f-20{
+    font-size: 20px;
+}
+
+.row.form-styling{
+    height: 99%;
+    width: 100%;
+    border: 2px solid #520608;
+    border-radius: 30px;
+    box-shadow: 10px 5px 5px 5px lightgray;
+    background-color: white;
+}
+/* background: linear-gradient(to right, #2196f3, #f44336) !important */
+.custom-css {
+    position: absolute;
+    margin-top: 150px;
+    margin-bottom: 100px;
+    margin-left: 425px;
+    height: 500px;
+    width: 700px;
+    background-color: #D4EDDA;
+    border-radius: 20px;
+    box-shadow: 10px 5px 5px 5px lightgray;
+}
+
+.edit{
+    margin-top: 50px;
+}
+
+.adjust {
+    height: 100px;
+    width: 100px;
+    margin-left: 285px;
+    margin-top: 175px;
+}
+
+.custom-color{
+    color: green;
+}
+
+/* Try to make this background hold when user selects entities from google's dropdown suggestion */
+
+
+
+.custom-font{
+    font-style: italic;
+    font-size: 16px;
+}
+
+.font-small{
+    font-size: 14px;
+    color: gray;
+}
+
+.w-10{
+    width: 75px;
+}
+
+.cancel-button {
+    width: 100px;
+    height: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 130px;
+}
+
+.next-button {
+    width: 100px;
+    height: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 150px;
+}

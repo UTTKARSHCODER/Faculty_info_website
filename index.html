@@ -1,0 +1,123 @@
+<?php 
+  include('config/config.php');
+  include('include/header.php');
+  
+
+?>  
+    
+          <!-- main box -->
+          <div class="main-box">
+              <!-- department grid -->
+              <div class="department-grid">
+                
+                <a href = "department.php?dept=cse" style = "text-decoration:none;">
+                  <div class= "dept">
+                    Computer Science & Engineering<br>
+                    <?php 
+                      $sql = "SELECT COUNT(`sno`) AS distinct_count FROM `detailed_faculty_info` WHERE `detailed_faculty_info`.`department` = 'Computer Science & Engineering'";
+                      $result = mysqli_query($conn, $sql);
+                      if($result) {
+                          $row = mysqli_fetch_assoc($result);
+                          echo $row['distinct_count'] . " "; ?>Faculty Members 
+                          <?php 
+                      }
+                    ?>
+                  </div>
+                </a>
+                <a href = "department.php?dept=cseai" style = "text-decoration:none;">
+                <div class="dept">Computer Science & Engineering(AI)<br>
+                <?php 
+                    $sql = "SELECT COUNT(`sno`) AS distinct_count FROM `detailed_faculty_info` WHERE `detailed_faculty_info`.`department` = 'Computer Science & Engineering(AI)'";
+                    $result = mysqli_query($conn, $sql);
+                    if($result) {
+                        $row = mysqli_fetch_assoc($result);
+                        echo $row['distinct_count'] . " "; ?>Faculty Members <?php 
+                      }
+                  ?>
+                </div>
+                </a>
+                <a href = "department.php?dept=cseds" style = "text-decoration:none;">
+                <div class="dept">Computer Science & Engineering(DS)<br>
+                <?php 
+                    $sql = "SELECT COUNT(`sno`) AS distinct_count FROM `detailed_faculty_info`  WHERE `detailed_faculty_info`.`department` = 'Computer Science & Engineering(DS)'";
+                    $result = mysqli_query($conn, $sql);
+                    if($result) {
+                        $row = mysqli_fetch_assoc($result);
+                        echo $row['distinct_count'] . " "; ?>Faculty Members <?php
+                     }
+                  ?>
+                </div>
+                </a>
+                <a href = "department.php?dept=cseiot" style = "text-decoration:none;">
+                <div class="dept">Computer Science & Engineering(IOT)<br>
+                <?php 
+                    $sql = "SELECT COUNT(`sno`) AS distinct_count FROM `detailed_faculty_info`  WHERE `detailed_faculty_info`.`department` = 'Computer Science & Engineering(IOT)'";
+                    $result = mysqli_query($conn, $sql);
+                    if($result) {
+                        $row = mysqli_fetch_assoc($result);
+                        echo $row['distinct_count'] . " "; ?>Faculty Members
+                    <?php }
+                  ?>
+                </div>
+                </a>
+                <!-- <div class="dept">Information Technology<br>
+                //<?php 
+                //     $sql = "SELECT COUNT(`sno`) AS distinct_count FROM `detailed_faculty_info`  WHERE `detailed_faculty_info`.`department` = 'Information Technology'";
+                //     $result = mysqli_query($conn, $sql);
+                //     if($result) {
+                //         $row = mysqli_fetch_assoc($result);
+                //         echo $row['distinct_count'] . " "; ?>Faculty Members
+                //     <?php
+                //     }
+                //   ?>
+                // </div>
+                // <div class="dept">Electronics & Communication Engineering<br>
+                //     <?php 
+                //     $sql = "SELECT COUNT(`sno`) AS distinct_count FROM `detailed_faculty_info`  WHERE `detailed_faculty_info`.`department` = 'Electronics & Communication Engineering'";
+                //     $result = mysqli_query($conn, $sql);
+                //     if($result) {
+                //         $row = mysqli_fetch_assoc($result);
+                //         echo $row['distinct_count']. " "; ?>Faculty Members
+                //     <?php
+                //     }
+                //   ?>
+                // </div>
+                // <div class="dept">Electrical Engineering <br>
+                //     <?php 
+                //     $sql = "SELECT COUNT(`sno`) AS distinct_count FROM `detailed_faculty_info`  WHERE `detailed_faculty_info`.`department` = 'Electrical Engineering'";
+                //     $result = mysqli_query($conn, $sql);
+                //     if($result) {
+                //         $row = mysqli_fetch_assoc($result);
+                //         echo $row['distinct_count']. " "; ?>Faculty Members
+                //     <?php
+                //     }
+                //   ?>
+                // </div> 
+                // <div class="dept">Mechnical Engineering<br>
+                //     <?php 
+                //     $sql = "SELECT COUNT(`sno`) AS distinct_count FROM `detailed_faculty_info`  WHERE `detailed_faculty_info`.`department` = 'Mechnical Engineering'";
+                //     $result = mysqli_query($conn, $sql);
+                //     if($result) {
+                //         $row = mysqli_fetch_assoc($result);
+                //         echo $row['distinct_count']. " "; ?>Faculty Members
+                //     <?php
+                //     }
+                //   ?>
+                // </div>
+                // <div class="dept">Civil Engineering<br>
+                //     <?php 
+                //     $sql = "SELECT COUNT(`sno`) AS distinct_count FROM `detailed_faculty_info`  WHERE `detailed_faculty_info`.`department` = 'Civil Engineering'";
+                //     $result = mysqli_query($conn, $sql);
+                //     if($result) {
+                //         $row = mysqli_fetch_assoc($result);
+                //         echo $row['distinct_count'] . " "; ?>Faculty Members
+                //     <?php
+                //     }
+                  ?>
+                </div> -->
+              </div>  
+          </div>
+      </div>
+<?php 
+  include('include/footer.html');
+?>

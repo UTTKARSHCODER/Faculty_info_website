@@ -1,0 +1,55 @@
+<?php
+    include('config/config.php');
+    session_start();
+?>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Sample</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel='stylesheet' type='text/css' media='screen' href='assets/css/style.css'>
+</head>
+
+<body>
+    <div class="custom-css" id='display'>
+        <img src="assets/image/success_image.png" class="adjust">
+        <h2 class="text-center edit">Form Submitted Successfully!</h2>
+        <a style="margin-left: 225px; margin-top: 50px;" href="index.php" id="manualRedirectLink">Click here to go to
+            your dashboard</a>
+    </div>
+
+    <script>
+    const redirectURL = 'index.php';
+    const delay = 3000;
+
+    function autoRedirect() {
+        <?php 
+                $sql = "UPDATE `detailed_faculty_info` set `status` = 'Registered' WHERE `detailed_faculty_info`.`email` = '" . $_SESSION['userEmail'] . "'";
+                $result = mysqli_query($conn,$sql);
+                if ($result) { ?>
+        window.location.href = redirectURL;
+        <?php } else { ?>
+        document.getElementById('display').innerHTML = `<div class="alert alert-danger">
+                        <strong>Error!</strong> Unable to update your status.
+                        </div>`
+        <?php }
+                ?>
+    }
+
+    setTimeout(autoRedirect, delay);
+    </script>
+    <!-- <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, quo.
+      </p> -->
+</body>
+
+</html>
